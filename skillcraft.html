@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: transparent;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav.scrolled {
+      background-color: #111;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 5px 10px;
+      transition: color 0.3s, background-color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #f44336;
+      border-radius: 5px;
+      color: #fff;
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .hero {
+      background: url('https://picsum.photos/1600/900') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    section {
+      padding: 80px 50px;
+      background-color: #f4f4f4;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #111;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="navbar">
+    <div class="logo">MyBrand</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div>
+      <h1>Welcome to My Website</h1>
+      <p>Create stunning and interactive websites with responsive navigation and smooth user experience.</p>
+    </div>
+  </section>
+
+  <section id="features">
+    <h2>Features</h2>
+    <p>This page includes a sticky navbar that changes style on scroll and highlights items on hover. Fully responsive and mobile-friendly.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Get in touch at contact@example.com or call us at +123-456-7890</p>
+  </section>
+
+  <footer>
+    &copy; 2025 MyBrand. All rights reserved.
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
